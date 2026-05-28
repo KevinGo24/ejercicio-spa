@@ -3,7 +3,7 @@
  * Archivo principal SPA
  * ---------------------------------------------------------
  */
-
+//import {about} from './pages/about.js'
 import { loadNavbar } from './components/navbar.js';
 import { router } from './router/router.js';
 import '../css/styles.css';

@@ -137,3 +137,9 @@ textarea{
     border-radius: 10px;
 }
 
+p{
+    color: white;
+    font-style: oblique;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
