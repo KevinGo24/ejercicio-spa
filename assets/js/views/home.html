@@ -1,5 +1,46 @@
 <section>
     <h1>Rick and Morty Characters</h1>
-
     <div id="characters-container" class="grid"></div>
 </section>
+<dialog id="modalEditar">
+
+    <form id="formEditar">
+
+        <input
+            type="text"
+            id="edit_name"
+            placeholder="Nombre"
+        >
+
+        <input
+            type="text"
+            id="edit_status"
+            placeholder="Status"
+        >
+
+        <input
+            type="text"
+            id="edit_species"
+            placeholder="Species"
+        >
+
+        <input
+            type="text"
+            id="edit_image"
+            placeholder="URL imagen"
+        >
+
+        <button type="submit">
+            Guardar
+        </button>
+
+        <button
+            type="button"
+            id="cerrarModal"
+        >
+            Cancelar
+        </button>
+
+    </form>
+
+</dialog>

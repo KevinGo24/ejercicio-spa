@@ -12,13 +12,9 @@ export async function renderAbout() {
     );
 
     // AHORA el botón ya existe
-    const enviarDatos =
-        document.getElementById("Enviar_datos");
-
-    enviarDatos.addEventListener("click", function (e) {
-
+    const enviarDatos = document.getElementById("Enviar_datos");
+        enviarDatos.addEventListener("click", function (e) {
         e.preventDefault();
-
         const namePersonaje =
             document.getElementById("name_personaje").value;
         const episodePersonaje = 
@@ -27,21 +23,44 @@ export async function renderAbout() {
             document.getElementById("genero_personaje").value
         const urlPersonaje =
             document.getElementById("Url_picture").value
+        const statusPersonaje =
+            document.getElementById("status_personaje").value
+        const speciesPersonaje = 
+            document.getElementById("species_personaje").value
+        if (
+            namePersonaje.trim() !== "" &&
+            episodePersonaje.trim() !== "" &&
+            generoPersonaje.trim() !== "" &&
+            urlPersonaje.trim() !== "" &&
+            statusPersonaje.trim() !== "" &&
+            speciesPersonaje.trim() !== ""
+        ){
 
+            const personajeFormulario = {
+                name: namePersonaje,
+                episode: episodePersonaje,
+                gender: generoPersonaje,
+                image: urlPersonaje,
+                status: statusPersonaje,
+                species: speciesPersonaje
+            };
 
-        const personajeFormulario = {
+            const personajesGuardados =
+                JSON.parse(localStorage.getItem("personajes")) || [];
 
-            namePersonaje,
-            episodePersonaje,
-            generoPersonaje,
-            urlPersonaje
+            personajesGuardados.push(personajeFormulario);
 
-        };
-        console.log(personajeFormulario)
-        localStorage.setItem(
-            "personaje_ficticio",
-            JSON.stringify(personajeFormulario)
-        );
+            localStorage.setItem(
+                "personajes",
+                JSON.stringify(personajesGuardados)
+            );
+
+            alert("Datos enviados");
+
+        } else {
+            alert("Todos los campos son obligatorios");
+        }
+
     });
 
 }

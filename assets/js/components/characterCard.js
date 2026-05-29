@@ -2,7 +2,7 @@
  * Character Card Component
  */
 
-export function characterCard(character) {
+export function characterCard(character,index) {
 
     return `
         <article class="card">
@@ -21,6 +21,10 @@ export function characterCard(character) {
                     <strong>Species:</strong>
                     ${character.species}
                 </p>
+                <div class="card_button">
+                <button id="editar_personaje" class="Editar" data-index="${index}"> Editar</button>
+                <button id="eliminar_persobnaje" class="Eliminar" data-index="${index}"> Elimianar</button>
+                </div>
             </div>
         </article>
     `;
