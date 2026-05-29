@@ -1,8 +1,7 @@
 import { loadHTML } from '../utils/helpers.js';
 import { getCharacters } from '../services/api.js';
 import { characterCard } from '../components/characterCard.js';
-import {dialog} from "./dialog.js";
-
+import { initModal } from '../components/modal.js';
 /**
  * Renderiza Home
  */
@@ -35,4 +34,7 @@ export async function renderHome() {
         characterCard(character, index)
     )
     .join('');
+
+
+    initModal();
 }
